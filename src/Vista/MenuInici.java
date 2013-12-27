@@ -53,7 +53,6 @@ public class MenuInici extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        txFitxer.setBackground(new java.awt.Color(255, 255, 255));
         txFitxer.setEditable(false);
         txFitxer.setFont(new java.awt.Font("Buxton Sketch", 0, 18)); // NOI18N
         txFitxer.setForeground(new java.awt.Color(255, 255, 255));
@@ -114,9 +113,7 @@ public class MenuInici extends javax.swing.JFrame {
         getContentPane().add(fons, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 570, 390));
 
         pack();
-        java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-        java.awt.Dimension dialogSize = getSize();
-        setLocation((screenSize.width-dialogSize.width)/2,(screenSize.height-dialogSize.height)/2);
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void txFitxerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txFitxerActionPerformed
@@ -148,12 +145,9 @@ public class MenuInici extends javax.swing.JFrame {
             txFitxer.setText(file.getName());
             txFitxer.setEditable(false);
             txFitxer.setEnabled(false);
-            //Activació botó Generació llistes
-            botoGenerar.setEnabled(true);
-          
+
             //Crida al mètode de creació de alumnes i retorna una array amb el total d'asignatures
             treeMateries = tr.asignatures(file.getAbsolutePath());
-
 
             //Visualització valors l'estructura Jlist requereix un ListModel per ser omplenada
             DefaultListModel defaultlistModel = new DefaultListModel();
@@ -163,6 +157,11 @@ public class MenuInici extends javax.swing.JFrame {
 
             jtMateries.setModel(defaultlistModel);
 
+            //si se ha seleccionat algun fitxer
+            if (txFitxer.getText().compareTo("") != 0) {
+                //Activació botó Generació llistes
+                botoGenerar.setEnabled(true);
+            }
         }
         // TODO add your handling code here:
     }//GEN-LAST:event_botoExaminarMouseClicked
@@ -172,36 +171,40 @@ public class MenuInici extends javax.swing.JFrame {
     }//GEN-LAST:event_botoSortirMouseClicked
 
     private void botoGenerarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botoGenerarMouseClicked
-        // TODO add your handling code here:
-        TreeSet<String> materiesSeleccio = new TreeSet<String>(jtMateries.getSelectedValuesList());
-        CrearXML crear = new CrearXML();
+        //si el boto està enable i se ha seleccionat alguna materia
+        if (botoGenerar.isEnabled() && !jtMateries.isSelectionEmpty()) {
+            TreeSet<String> materiesSeleccio = new TreeSet<String>(jtMateries.getSelectedValuesList());
+            CrearXML crear = new CrearXML();
 
-        crear.crearLlistaMateria(materiesSeleccio, tr.getTreeAlumne());
+            crear.crearLlistaMateria(materiesSeleccio, tr.getTreeAlumne());
 
-        FileNameExtensionFilter filter = new FileNameExtensionFilter("eXtensible Markup Language(*.xml)", "xml");
-        //Creació  fileChooser
-        JFileChooser desarFitxer = new JFileChooser();
-        //Afegir el filtre
-        desarFitxer.setFileFilter(filter);
-        //Indiquem el titol de la finestra
+            FileNameExtensionFilter filter = new FileNameExtensionFilter("eXtensible Markup Language(*.xml)", "xml");
+            //Creació  fileChooser
+            JFileChooser desarFitxer = new JFileChooser();
+            //Afegir el filtre
+            desarFitxer.setFileFilter(filter);
+            //Indiquem el titol de la finestra
 //        fileChooser.setDialogTitle("Generador de llistats");
-        int result = desarFitxer.showSaveDialog(null);
-        try {
-            if (result == JFileChooser.APPROVE_OPTION) {
-                File file = desarFitxer.getSelectedFile();
-                String path = file.getAbsolutePath();
-                crear.desarFitxer(path);
+            int result = desarFitxer.showSaveDialog(null);
+            try {
+                if (result == JFileChooser.APPROVE_OPTION) {
+                    File file = desarFitxer.getSelectedFile();
+                    String path = file.getAbsolutePath();
+                    crear.desarFitxer(path);
 
-                if (!(path.endsWith(".xml"))) {
-                    File temp = new File(path + ".xml");
-                    //Rename Fitxer
-                    file.renameTo(temp);
+                    if (!(path.endsWith(".xml"))) {
+                        File temp = new File(path + ".xml");
+                        //Rename Fitxer
+                        file.renameTo(temp);
+                    }
+                    JOptionPane.showMessageDialog(null, "Fitxer desat correctament", null, JOptionPane.INFORMATION_MESSAGE);
+
                 }
-                JOptionPane.showMessageDialog(null, "Fitxer desat correctament", null, JOptionPane.INFORMATION_MESSAGE);
-
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "Error en desar el fitxer", null, JOptionPane.ERROR_MESSAGE);
             }
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Error al deixar fitxer", null, JOptionPane.ERROR_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(rootPane, "Has de seleccionar una materia", null, WIDTH);
         }
     }//GEN-LAST:event_botoGenerarMouseClicked
 
