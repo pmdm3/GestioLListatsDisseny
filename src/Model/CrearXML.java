@@ -55,7 +55,7 @@ public class CrearXML {
 	 * @param alumnes
 	 *            TreeSet d'alumnes
 	 */
-	public void crearLlistaMateria(Set<String> materias,
+	public void llistatMateria(Set<String> materias,
 			TreeSet<Alumne> alumnes) {
 
 		for (String auxMateria : materias) {
@@ -68,7 +68,7 @@ public class CrearXML {
 			llistaMateria.setAttributeNode(attrLlista);
 
 			for (Alumne auxAlumne : alumnes) {
-				if (auxAlumne.getMateria().toString().contains(auxMateria)) {//TODO condicional de materia i alumne
+				if (auxAlumne.getMateria().toString().contains(auxMateria)) {
 					// creació de l'element alumne
 					Element alu = this.doc.createElement("alumne");
 					// el afegim perquè pengi del node llista
