@@ -49,8 +49,9 @@ public class MenuInici extends javax.swing.JFrame {
         fons = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(0, 102, 204));
         setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
+        setForeground(new java.awt.Color(0, 102, 204));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -81,10 +82,10 @@ public class MenuInici extends javax.swing.JFrame {
         txFitxer.setEditable(false);
         txFitxer.setBackground(new java.awt.Color(255, 255, 255));
         txFitxer.setFont(new java.awt.Font("Buxton Sketch", 0, 18)); // NOI18N
-        txFitxer.setForeground(new java.awt.Color(255, 255, 255));
+        txFitxer.setForeground(new java.awt.Color(0, 102, 255));
         txFitxer.setBorder(null);
         txFitxer.setCaretColor(new java.awt.Color(255, 255, 255));
-        txFitxer.setDisabledTextColor(new java.awt.Color(0, 153, 153));
+        txFitxer.setDisabledTextColor(new java.awt.Color(0, 102, 204));
         txFitxer.setOpaque(false);
         txFitxer.setRequestFocusEnabled(false);
         txFitxer.setSelectionColor(new java.awt.Color(255, 255, 255));
@@ -94,11 +95,11 @@ public class MenuInici extends javax.swing.JFrame {
         jtMateries.setForeground(new java.awt.Color(0, 153, 153));
         JSmateries.setViewportView(jtMateries);
 
-        getContentPane().add(JSmateries, new org.netbeans.lib.awtextra.AbsoluteConstraints(56, 190, 300, 140));
+        getContentPane().add(JSmateries, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, 300, 140));
 
         fons.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imatges/Captura.PNG"))); // NOI18N
         fons.setText("Selecciona les matèries de les quals vols generar llistes:");
-        getContentPane().add(fons, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 570, 390));
+        getContentPane().add(fons, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 570, 380));
 
         pack();
         setLocationRelativeTo(null);
