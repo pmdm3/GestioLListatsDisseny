@@ -10,7 +10,7 @@ public class Llegir {
 		File fitxer;
                 //Creació buffer per la lectura
 		BufferedReader br = null;
-		ArrayList<String[]> datos = new ArrayList<String[]>();
+		ArrayList<String[]> dades = new ArrayList<String[]>();
 
 		try {
                     //Creació fitxer amb el path indicat
@@ -26,10 +26,10 @@ public class Llegir {
 			while (linea != null) {
                             //Comprovar que les linies no són comentaris
                             //En cas afirmatiu eliminar caracters
-                            //Traspas de la linea a la estructura a tractar (datos)
+                            //Traspas de la linea a la estructura a tractar (dades)
 				if (!linea.startsWith(" #")) {
-					linea=linea.replace("\"","");
-					datos.add(linea.split(","));
+					linea = linea.replace("\"","");
+					dades.add(linea.split(","));
 				}
                                 //Següent linea
 				linea = br.readLine();
@@ -43,6 +43,6 @@ public class Llegir {
 				e.printStackTrace();
 			}
 		}
-		return datos;
+		return dades;
 	}
 }
