@@ -42,8 +42,10 @@ public class Tractar {
                 return llistatMateries;
 	}
 
-    public TreeSet<Alumne> getTreeAlumne() {
-        return treeAlumne;
+      public void desarFitxer(TreeSet<String> materias, String path) {
+        CrearXML crear = new CrearXML();
+        crear.llistatMateria(materias, this.treeAlumne);
+        crear.desarFitxer(path);
     }
 
 }
