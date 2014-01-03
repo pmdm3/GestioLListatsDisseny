@@ -160,12 +160,14 @@ public class MenuInici extends javax.swing.JFrame {
                     tr.desarFitxer(materiesSeleccio, path);
 
                     if (!(path.endsWith(".xml"))) {
-                        File temp = new File(path + ".xml");
+                        path += ".xml";
+                        File temp = new File(path);
                         //Rename Fitxer
                         file.renameTo(temp);
                     }
                     JOptionPane.showMessageDialog(null, "Fitxer desat correctament", null, JOptionPane.INFORMATION_MESSAGE);
-                    Desktop.getDesktop().open(file);
+                    //obrim el fitxer
+                    Desktop.getDesktop().open(new File(path));
                 }
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, "Error en desar el fitxer", null, JOptionPane.ERROR_MESSAGE);
