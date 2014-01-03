@@ -4,8 +4,8 @@
  */
 package Vista;
 
-import Model.CrearXML;
 import Utils.Tractar;
+import java.awt.Desktop;
 import java.io.File;
 import java.util.Set;
 import java.util.TreeSet;
@@ -64,6 +64,7 @@ public class MenuInici extends javax.swing.JFrame {
         getContentPane().add(examinar, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 70, -1, -1));
 
         generar.setText("Generar Llistes");
+        generar.setEnabled(false);
         generar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 generarActionPerformed(evt);
@@ -80,26 +81,20 @@ public class MenuInici extends javax.swing.JFrame {
         getContentPane().add(sortir, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 260, -1, -1));
 
         txFitxer.setEditable(false);
-        txFitxer.setBackground(new java.awt.Color(255, 255, 255));
-        txFitxer.setFont(new java.awt.Font("Buxton Sketch", 0, 18)); // NOI18N
-        txFitxer.setForeground(new java.awt.Color(0, 102, 255));
+        txFitxer.setToolTipText("");
         txFitxer.setBorder(null);
-        txFitxer.setCaretColor(new java.awt.Color(255, 255, 255));
-        txFitxer.setDisabledTextColor(new java.awt.Color(0, 102, 204));
-        txFitxer.setOpaque(false);
-        txFitxer.setRequestFocusEnabled(false);
-        txFitxer.setSelectionColor(new java.awt.Color(255, 255, 255));
+        txFitxer.setDisabledTextColor(new java.awt.Color(255, 255, 255));
         getContentPane().add(txFitxer, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, 310, 40));
 
         jtMateries.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
         jtMateries.setForeground(new java.awt.Color(0, 153, 153));
         JSmateries.setViewportView(jtMateries);
 
-        getContentPane().add(JSmateries, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, 300, 140));
+        getContentPane().add(JSmateries, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, 310, 150));
 
         fons.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imatges/Captura.PNG"))); // NOI18N
         fons.setText("Selecciona les matèries de les quals vols generar llistes:");
-        getContentPane().add(fons, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 570, 380));
+        getContentPane().add(fons, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 570, 390));
 
         pack();
         setLocationRelativeTo(null);
@@ -170,7 +165,7 @@ public class MenuInici extends javax.swing.JFrame {
                         file.renameTo(temp);
                     }
                     JOptionPane.showMessageDialog(null, "Fitxer desat correctament", null, JOptionPane.INFORMATION_MESSAGE);
-
+                    Desktop.getDesktop().open(file);
                 }
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, "Error en desar el fitxer", null, JOptionPane.ERROR_MESSAGE);
