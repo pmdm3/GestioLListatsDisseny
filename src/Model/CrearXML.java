@@ -55,8 +55,7 @@ public class CrearXML {
 	 * @param alumnes
 	 *            TreeSet d'alumnes
 	 */
-	public void llistatMateria(Set<String> materias,
-			TreeSet<Alumne> alumnes) {
+	public void llistatMateria(Set<String> materias, TreeSet<Alumne> alumnes) {
 
 		for (String auxMateria : materias) {
 			// creació de l'element llista
@@ -111,7 +110,8 @@ public class CrearXML {
 			StreamResult result = new StreamResult(new File(pathname));
 			// Les següents línies són per indentar
 			trans.setOutputProperty(OutputKeys.INDENT, "yes");
-			trans.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
+                        //trans.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "no");
+                        trans.setOutputProperty(OutputKeys.STANDALONE, "yes");
 			trans.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "4");
                         trans.setOutputProperty(OutputKeys.ENCODING,"UTF-8");
 			trans.transform(source, result);
