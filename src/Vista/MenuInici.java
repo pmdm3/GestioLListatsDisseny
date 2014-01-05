@@ -6,6 +6,7 @@ package Vista;
 
 import Utils.Tractar;
 import java.awt.Desktop;
+import java.awt.Toolkit;
 import java.io.File;
 import java.util.Set;
 import java.util.TreeSet;
@@ -49,45 +50,52 @@ public class MenuInici extends javax.swing.JFrame {
         fons = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Gestio Llistats");
         setBackground(new java.awt.Color(0, 102, 204));
         setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
         setForeground(new java.awt.Color(0, 102, 204));
+        setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\Federico\\Documents\\NetBeansProjects\\GestioLlistatsEntrada\\GestioLListatsDisseny\\src\\imatges\\Llistat.png"));
+        setUndecorated(true);
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        examinar.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
         examinar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imatges/Carpeta.png"))); // NOI18N
-        examinar.setText("Examinar");
         examinar.setBorder(null);
-        examinar.setBorderPainted(false);
+        examinar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         examinar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 examinarActionPerformed(evt);
             }
         });
-        getContentPane().add(examinar, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 70, 130, 50));
+        getContentPane().add(examinar, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 70, 40, 50));
 
+        generar.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
         generar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imatges/engra.png"))); // NOI18N
         generar.setText("Generar Llistes");
         generar.setBorder(null);
         generar.setBorderPainted(false);
+        generar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         generar.setEnabled(false);
         generar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 generarActionPerformed(evt);
             }
         });
-        getContentPane().add(generar, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 190, 130, 40));
+        getContentPane().add(generar, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 180, 170, 40));
 
+        sortir.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
         sortir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imatges/Sortir.png"))); // NOI18N
         sortir.setText("Sortir");
         sortir.setBorder(null);
         sortir.setBorderPainted(false);
+        sortir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         sortir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 sortirActionPerformed(evt);
             }
         });
-        getContentPane().add(sortir, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 290, 130, 40));
+        getContentPane().add(sortir, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 300, 90, 40));
 
         txFitxer.setEditable(false);
         txFitxer.setToolTipText("");
@@ -100,6 +108,7 @@ public class MenuInici extends javax.swing.JFrame {
 
         jtMateries.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
         jtMateries.setForeground(new java.awt.Color(0, 153, 153));
+        jtMateries.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         JSmateries.setViewportView(jtMateries);
 
         getContentPane().add(JSmateries, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, 310, 150));
