@@ -55,7 +55,7 @@ public class MenuInici extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        examinar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imatges/browse.png"))); // NOI18N
+        examinar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imatges/Carpeta.png"))); // NOI18N
         examinar.setText("Examinar");
         examinar.setBorder(null);
         examinar.setBorderPainted(false);
@@ -66,7 +66,7 @@ public class MenuInici extends javax.swing.JFrame {
         });
         getContentPane().add(examinar, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 70, 130, 50));
 
-        generar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imatges/icon_business_rules_engine.png"))); // NOI18N
+        generar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imatges/engra.png"))); // NOI18N
         generar.setText("Generar Llistes");
         generar.setBorder(null);
         generar.setBorderPainted(false);
@@ -78,7 +78,7 @@ public class MenuInici extends javax.swing.JFrame {
         });
         getContentPane().add(generar, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 190, 130, 40));
 
-        sortir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imatges/Actions-session-exit-icon (1).png"))); // NOI18N
+        sortir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imatges/Sortir.png"))); // NOI18N
         sortir.setText("Sortir");
         sortir.setBorder(null);
         sortir.setBorderPainted(false);
