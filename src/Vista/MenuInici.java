@@ -57,31 +57,37 @@ public class MenuInici extends javax.swing.JFrame {
 
         examinar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imatges/browse.png"))); // NOI18N
         examinar.setText("Examinar");
+        examinar.setBorder(null);
+        examinar.setBorderPainted(false);
         examinar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 examinarActionPerformed(evt);
             }
         });
-        getContentPane().add(examinar, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 70, 150, 50));
+        getContentPane().add(examinar, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 70, 130, 50));
 
         generar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imatges/icon_business_rules_engine.png"))); // NOI18N
         generar.setText("Generar Llistes");
+        generar.setBorder(null);
+        generar.setBorderPainted(false);
         generar.setEnabled(false);
         generar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 generarActionPerformed(evt);
             }
         });
-        getContentPane().add(generar, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 180, -1, -1));
+        getContentPane().add(generar, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 190, 130, 40));
 
         sortir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imatges/Actions-session-exit-icon (1).png"))); // NOI18N
         sortir.setText("Sortir");
+        sortir.setBorder(null);
+        sortir.setBorderPainted(false);
         sortir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 sortirActionPerformed(evt);
             }
         });
-        getContentPane().add(sortir, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 290, 130, 40));
+        getContentPane().add(sortir, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 290, 130, 40));
 
         txFitxer.setEditable(false);
         txFitxer.setToolTipText("");

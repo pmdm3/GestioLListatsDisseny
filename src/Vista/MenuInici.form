@@ -42,13 +42,17 @@
           <Image iconType="3" name="/imatges/browse.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Examinar"/>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="null"/>
+        </Property>
+        <Property name="borderPainted" type="boolean" value="false"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="examinarActionPerformed"/>
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="390" y="70" width="150" height="50"/>
+          <AbsoluteConstraints x="390" y="70" width="130" height="50"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -58,6 +62,10 @@
           <Image iconType="3" name="/imatges/icon_business_rules_engine.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Generar Llistes"/>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="null"/>
+        </Property>
+        <Property name="borderPainted" type="boolean" value="false"/>
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>
       <Events>
@@ -65,7 +73,7 @@
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="400" y="180" width="-1" height="-1"/>
+          <AbsoluteConstraints x="390" y="190" width="130" height="40"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -75,13 +83,17 @@
           <Image iconType="3" name="/imatges/Actions-session-exit-icon (1).png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Sortir"/>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="null"/>
+        </Property>
+        <Property name="borderPainted" type="boolean" value="false"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="sortirActionPerformed"/>
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="400" y="290" width="130" height="40"/>
+          <AbsoluteConstraints x="390" y="290" width="130" height="40"/>
         </Constraint>
       </Constraints>
     </Component>
