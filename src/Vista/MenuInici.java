@@ -55,14 +55,16 @@ public class MenuInici extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        examinar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imatges/browse.png"))); // NOI18N
         examinar.setText("Examinar");
         examinar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 examinarActionPerformed(evt);
             }
         });
-        getContentPane().add(examinar, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 70, -1, -1));
+        getContentPane().add(examinar, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 70, 150, 50));
 
+        generar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imatges/icon_business_rules_engine.png"))); // NOI18N
         generar.setText("Generar Llistes");
         generar.setEnabled(false);
         generar.addActionListener(new java.awt.event.ActionListener() {
@@ -70,21 +72,25 @@ public class MenuInici extends javax.swing.JFrame {
                 generarActionPerformed(evt);
             }
         });
-        getContentPane().add(generar, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 190, -1, -1));
+        getContentPane().add(generar, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 180, -1, -1));
 
+        sortir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imatges/Actions-session-exit-icon (1).png"))); // NOI18N
         sortir.setText("Sortir");
         sortir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 sortirActionPerformed(evt);
             }
         });
-        getContentPane().add(sortir, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 260, -1, -1));
+        getContentPane().add(sortir, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 290, 130, 40));
 
         txFitxer.setEditable(false);
         txFitxer.setToolTipText("");
         txFitxer.setBorder(null);
-        txFitxer.setDisabledTextColor(new java.awt.Color(255, 255, 255));
-        getContentPane().add(txFitxer, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, 310, 40));
+        txFitxer.setDisabledTextColor(new java.awt.Color(51, 153, 255));
+        txFitxer.setDoubleBuffered(true);
+        txFitxer.setEnabled(false);
+        txFitxer.setSelectedTextColor(new java.awt.Color(51, 153, 255));
+        getContentPane().add(txFitxer, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 80, 290, 40));
 
         jtMateries.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
         jtMateries.setForeground(new java.awt.Color(0, 153, 153));
@@ -92,7 +98,7 @@ public class MenuInici extends javax.swing.JFrame {
 
         getContentPane().add(JSmateries, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, 310, 150));
 
-        fons.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imatges/Captura.PNG"))); // NOI18N
+        fons.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imatges/Background_g.png"))); // NOI18N
         fons.setText("Selecciona les matèries de les quals vols generar llistes:");
         getContentPane().add(fons, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 570, 390));
 

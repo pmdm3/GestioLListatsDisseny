@@ -38,6 +38,9 @@
   <SubComponents>
     <Component class="javax.swing.JButton" name="examinar">
       <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/imatges/browse.png"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Examinar"/>
       </Properties>
       <Events>
@@ -45,12 +48,15 @@
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="390" y="70" width="-1" height="-1"/>
+          <AbsoluteConstraints x="390" y="70" width="150" height="50"/>
         </Constraint>
       </Constraints>
     </Component>
     <Component class="javax.swing.JButton" name="generar">
       <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/imatges/icon_business_rules_engine.png"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Generar Llistes"/>
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>
@@ -59,12 +65,15 @@
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="400" y="190" width="-1" height="-1"/>
+          <AbsoluteConstraints x="400" y="180" width="-1" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>
     <Component class="javax.swing.JButton" name="sortir">
       <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/imatges/Actions-session-exit-icon (1).png"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Sortir"/>
       </Properties>
       <Events>
@@ -72,7 +81,7 @@
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="410" y="260" width="-1" height="-1"/>
+          <AbsoluteConstraints x="400" y="290" width="130" height="40"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -84,12 +93,17 @@
           <Border info="null"/>
         </Property>
         <Property name="disabledTextColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+          <Color blue="ff" green="99" red="33" type="rgb"/>
+        </Property>
+        <Property name="doubleBuffered" type="boolean" value="true"/>
+        <Property name="enabled" type="boolean" value="false"/>
+        <Property name="selectedTextColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="99" red="33" type="rgb"/>
         </Property>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="50" y="80" width="310" height="40"/>
+          <AbsoluteConstraints x="60" y="80" width="290" height="40"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -123,7 +137,7 @@
     <Component class="javax.swing.JLabel" name="fons">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/imatges/Captura.PNG"/>
+          <Image iconType="3" name="/imatges/Background_g.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Selecciona les mat&#xe8;ries de les quals vols generar llistes:"/>
       </Properties>
