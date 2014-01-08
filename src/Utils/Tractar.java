@@ -5,6 +5,7 @@ import Model.CrearXML;
 import Model.Llegir;
 import java.util.ArrayList;
 import java.util.TreeSet;
+import javax.swing.JOptionPane;
 
 public class Tractar {
 
@@ -15,8 +16,13 @@ public class Tractar {
         ArrayList<String[]> dades = new ArrayList<String[]>();
 
         TreeSet<String> llistatMateries = new TreeSet<String>();
-        //Mètode de lectura 
-        dades = lc.llegir(nomFitxer);
+        try {
+            //Mètode de lectura
+            dades = lc.llegir(nomFitxer);
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, "el fitxer no té el format correcte", null, JOptionPane.ERROR_MESSAGE);
+            ex.printStackTrace();
+        }
 
         //Creació alumnes amb les dades del fitxer d'entrada (csv)
         for (int i = 0; i < dades.size(); i++) {
