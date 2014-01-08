@@ -12,8 +12,6 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Set;
 import java.util.TreeSet;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
@@ -136,33 +134,35 @@ public class MenuInici extends javax.swing.JFrame {
         obrirFitxer.setDialogTitle("Generador de llistats");
         //Creacio estructura que conte totes les matèries 
         Set<String> treeMateries = new TreeSet<String>();
-        //Resultat de l'acció de l'usuari
-        int result = obrirFitxer.showOpenDialog(null);
-        //Comprovar la acció realitzada
-        if (result == JFileChooser.APPROVE_OPTION) {
-            //Creació fitxer seleccionat
-            File file = obrirFitxer.getSelectedFile();
-            //Visualització nom fitxer
-            txFitxer.setText(file.getName());
-            txFitxer.setEditable(false);
-            txFitxer.setEnabled(false);
 
-            //Crida al mètode de creació de alumnes i retorna una array amb el total d'asignatures
-            treeMateries = tr.asignatures(file.getAbsolutePath());
+        try {//Comprovar la acció realitzada
+            if (obrirFitxer.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
+                //Creació fitxer seleccionat
+                File file = obrirFitxer.getSelectedFile();
+                //Visualització nom fitxer
+                txFitxer.setText(file.getName());
+                txFitxer.setEditable(false);
+                txFitxer.setEnabled(false);
 
-            //Visualització valors l'estructura Jlist requereix un ListModel per ser emplenada
-            DefaultListModel defaultlistModel = new DefaultListModel();
-            for (String aux : treeMateries) {
-                defaultlistModel.addElement(aux);
-            }
+                //Crida al mètode de creació de alumnes i retorna una array amb el total d'asignatures
+                treeMateries = tr.asignatures(file.getAbsolutePath());
 
-            jtMateries.setModel(defaultlistModel);
+                //Visualització valors l'estructura Jlist requereix un ListModel per ser emplenada
+                DefaultListModel defaultlistModel = new DefaultListModel();
+                for (String aux : treeMateries) {
+                    defaultlistModel.addElement(aux);
+                }
+
+                jtMateries.setModel(defaultlistModel);
 
             //si se ha seleccionat algun fitxer
-            //activació botó Generació llistes
-            if (txFitxer.getText().compareTo("") != 0) {
-                generar.setEnabled(true);
+                //activació botó Generació llistes
+                if (txFitxer.getText().compareTo("") != 0) {
+                    generar.setEnabled(true);
+                }
             }
+        } catch (HeadlessException e) {
+            JOptionPane.showMessageDialog(null, "Error en obrir el fitxer", null, JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_examinarActionPerformed
 
@@ -227,10 +227,14 @@ public class MenuInici extends javax.swing.JFrame {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
-                }
+                
+
+}
             }
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MenuInici.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MenuInici.class  
+
+.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
@@ -240,7 +244,7 @@ public class MenuInici extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
 
             @Override
-            public void run() {
+        public void run() {
                 new MenuInici().setVisible(true);
             }
         });
