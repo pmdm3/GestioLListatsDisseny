@@ -108,12 +108,13 @@ public class CrearXML {
 			// forma del document
 			DOMSource source = new DOMSource(this.doc);
 			StreamResult result = new StreamResult(new File(pathname));
-			// Les següents línies són per indentar
-			trans.setOutputProperty(OutputKeys.INDENT, "yes");
-                        //trans.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "no");
-                        trans.setOutputProperty(OutputKeys.STANDALONE, "yes");
-			trans.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "4");
+
+                        trans.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION,"no");
+                        trans.setOutputProperty(OutputKeys.STANDALONE,"yes");
+                        trans.setOutputProperty(OutputKeys.INDENT,"yes");
                         trans.setOutputProperty(OutputKeys.ENCODING,"UTF-8");
+                        trans.setOutputProperty(OutputKeys.METHOD,"xml");
+			trans.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "4");
 			trans.transform(source, result);
 		} catch (TransformerException e) {
 			e.printStackTrace();
