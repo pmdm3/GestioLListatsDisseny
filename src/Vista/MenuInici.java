@@ -57,7 +57,6 @@ public class MenuInici extends javax.swing.JFrame {
         setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
         setForeground(new java.awt.Color(0, 102, 204));
         setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\Federico\\Documents\\NetBeansProjects\\GestioLlistatsEntrada\\GestioLListatsDisseny\\src\\imatges\\Llistat.png"));
-        setUndecorated(true);
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -142,7 +141,7 @@ public class MenuInici extends javax.swing.JFrame {
                 //Visualització nom fitxer
                 txFitxer.setText(file.getName());
                 txFitxer.setEditable(false);
-                txFitxer.setEnabled(false);
+                //txFitxer.setEnabled(false);
 
                 //Crida al mètode de creació de alumnes i retorna una array amb el total d'asignatures
                 treeMateries = tr.asignatures(file.getAbsolutePath());
