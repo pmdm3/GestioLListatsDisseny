@@ -21,10 +21,10 @@ public class Tractar {
             if(nomFitxer.endsWith(".csv")){
                 dades = lc.llegir(nomFitxer);
             } else{
-                throw new Exception("el fitxer no té el format correcte");
+                throw new Exception("El fitxer no té el format correcte");
             }
         } catch (Exception ex) {
-            JOptionPane.showMessageDialog(null, "el fitxer no té el format correcte", null, JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "El fitxer no té el format correcte", null, JOptionPane.ERROR_MESSAGE);
             ex.printStackTrace();
         }
 
