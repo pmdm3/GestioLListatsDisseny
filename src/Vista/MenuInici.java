@@ -6,10 +6,14 @@ package Vista;
 
 import Utils.Tractar;
 import java.awt.Desktop;
+import java.awt.HeadlessException;
 import java.awt.Toolkit;
 import java.io.File;
+import java.io.IOException;
 import java.util.Set;
 import java.util.TreeSet;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
@@ -166,16 +170,15 @@ public class MenuInici extends javax.swing.JFrame {
         //si el boto està enable i se ha seleccionat alguna materia
         if (generar.isEnabled() && !jtMateries.isSelectionEmpty()) {
             TreeSet<String> materiesSeleccio = new TreeSet<String>(jtMateries.getSelectedValuesList());
-            
+
             FileNameExtensionFilter filter = new FileNameExtensionFilter("eXtensible Markup Language(*.xml)", "xml");
             //Creació  fileChooser
             JFileChooser desarFitxer = new JFileChooser();
             //Afegir el filtre
             desarFitxer.setFileFilter(filter);
 
-            int result = desarFitxer.showSaveDialog(null);
             try {
-                if (result == JFileChooser.APPROVE_OPTION) {
+                if (desarFitxer.showSaveDialog(null) == JFileChooser.APPROVE_OPTION) {
                     File file = desarFitxer.getSelectedFile();
                     String path = file.getAbsolutePath();
                     tr.desarFitxer(materiesSeleccio, path);
@@ -190,8 +193,12 @@ public class MenuInici extends javax.swing.JFrame {
                     //obrim el fitxer
                     Desktop.getDesktop().open(new File(path));
                 }
-            } catch (Exception e) {
+            } catch (HeadlessException e) {
                 JOptionPane.showMessageDialog(null, "Error en desar el fitxer", null, JOptionPane.ERROR_MESSAGE);
+            } catch (IOException ex) {
+                JOptionPane.showMessageDialog(null, "Error en obrir el fitxer", null, JOptionPane.ERROR_MESSAGE);
+            } catch (Exception exe) {
+                JOptionPane.showMessageDialog(null, "Error", null, JOptionPane.ERROR_MESSAGE);
             }
         } else {
             JOptionPane.showMessageDialog(rootPane, "Has de seleccionar una materia", null, WIDTH);
