@@ -36,7 +36,7 @@ public class Llegir {
                     cap = linea.split(",");
                     if(cap[1].compareTo("00_NOM")!=0 || cap[2].compareTo("01_GRUPSCLASSE")!=0 || cap[3].compareTo("02_MATRICULADES")!=0)
                     {
-                        throw new Exception("el fitxer no té el format correcte");   
+                        throw new Exception("Les dades del fitxer no tenen el format correcte");   
                     }
                 }
                 //Següent linea
