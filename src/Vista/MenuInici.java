@@ -63,6 +63,7 @@ public class MenuInici extends javax.swing.JFrame {
         examinar.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
         examinar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imatges/Carpeta.png"))); // NOI18N
         examinar.setBorder(null);
+        examinar.setBorderPainted(false);
         examinar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         examinar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -96,7 +97,7 @@ public class MenuInici extends javax.swing.JFrame {
                 sortirActionPerformed(evt);
             }
         });
-        getContentPane().add(sortir, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 300, 90, 40));
+        getContentPane().add(sortir, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 300, 100, 40));
 
         txFitxer.setEditable(false);
         txFitxer.setToolTipText("");
@@ -107,12 +108,14 @@ public class MenuInici extends javax.swing.JFrame {
         txFitxer.setSelectedTextColor(new java.awt.Color(51, 153, 255));
         getContentPane().add(txFitxer, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 80, 290, 40));
 
+        JSmateries.setBorder(null);
+
         jtMateries.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
         jtMateries.setForeground(new java.awt.Color(0, 153, 153));
         jtMateries.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         JSmateries.setViewportView(jtMateries);
 
-        getContentPane().add(JSmateries, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, 310, 150));
+        getContentPane().add(JSmateries, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 190, 290, 140));
 
         fons.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imatges/Background_g.png"))); // NOI18N
         fons.setText("Selecciona les matèries de les quals vols generar llistes:");
